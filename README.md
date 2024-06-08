@@ -51,6 +51,10 @@ start_number : 몇 위 부터 수집할 것인지 결정<br>
 결과물은 엑셀 파일로 "C:\Users:\유저이름" 경로에 생성
 ![image](https://github.com/TTobing3/steam-data-Crawling/assets/100311186/af340c6f-ffc2-457f-b075-e6eee944d647)
 
+엑셀 파일의 칼럼은 다음과 같음!
+![image](https://github.com/TTobing3/steam-data-Crawling/assets/100311186/1a9305d4-87ad-4eb2-bf95-5e141ef0ccf5)
+
+
 ! 할인의 경우 원래 가격과 동시에 입력<br>
 ! 리뷰의 경우, 최근 리뷰가 아닌 전체 리뷰<br>
 ! 한국에서 제한된 게임은 이름만 수집한  스킵<br>
