@@ -29,10 +29,10 @@ start_time = time.time()
 ''' 시작세팅으로 반드시 성인 필터 해제 '''
 ''' 크롬 드라이버도 깔아야 함 '''
 
-country = "JP" #대상 국가
+country = "KR" #대상 국가
 date = "2024-5-28" #대상 날짜, 웹 사이트 들어가서 측정 시작일
 page = 1
-start_number = 60 #시작할 순위
+start_number = 1 #시작할 순위
 
 driver = webdriver.Chrome()
 driver.get('https://store.steampowered.com/charts/topsellers/'+country+'/'+date)
