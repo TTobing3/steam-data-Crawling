@@ -26,19 +26,20 @@ publisher_list = []
 
 start_time = time.time()
 
-''' 시작세팅으로 반드시 성인 햐재 햐여험 '''
+''' 시작세팅으로 반드시 성인 필터 해제 '''
+''' 크롬 드라이버도 깔아야 함 '''
 
-country = "KR"
-date = "2024-5-28"
+country = "JP" #대상 국가
+date = "2024-5-28" #대상 날짜, 웹 사이트 들어가서 측정 시작일
 page = 1
+start_number = 60 #시작할 순위
 
 driver = webdriver.Chrome()
 driver.get('https://store.steampowered.com/charts/topsellers/'+country+'/'+date)
 driver.implicitly_wait(3)
 
-input('시작 세팅 끝 : ')
+input('시작 세팅 끝 : ') #성인 해제 하고 콘솔창에 아무거나 입력해서 크롤링 시작
 
-start_number = 1
 
 for i in range(1,page+1):
     print(str(i)+"번째 페이지")
@@ -160,11 +161,11 @@ for i in range(1,page+1):
                         '출시일':release_date_list,
                         '개발사':developer_list,
                         '퍼블리셔':publisher_list})
-        df.to_excel('steam_china.xlsx')
+        df.to_excel('steam_'+country+'.xlsx')
         print(str(i)+'페이지'+str(j)+'까지 임시 저장')
         driver.back()
     
-    df.to_excel('steam_china_backup_0.xlsx')
+    df.to_excel('steam_'+country+'_backup_0.xlsx')
         
 
     print("순위"+str(len(rank_list))+
@@ -196,7 +197,6 @@ for i in title_list : print(i)
 for i in title_list : print(i)
 
 df.to_excel('steam_'+country+'_backup_2.xlsx')
-
 
 end_time = time.time()
 print("경과 시간 : "+str(end_time-start_time))
